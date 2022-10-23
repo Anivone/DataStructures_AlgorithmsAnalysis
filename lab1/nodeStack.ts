@@ -2,23 +2,23 @@ import { Stack } from "./stack";
 import { IStackNode, StackConfig } from "./types";
 
 export class NodeStack<T> extends Stack<T> {
-  private _front: StackNode<T> | null;
+  private _top: StackNode<T> | null;
 
   constructor(config: StackConfig) {
     super(config);
 
-    this._front = null;
+    this._top = null;
   }
 
   protected handlePop(): T {
-    const value = this._front!.value;
-    this._front = this._front!.next;
+    const value = this._top!.value;
+    this._top = this._top!.next;
 
     return value;
   }
 
   protected handlePush(value: T): this {
-    this._front = new StackNode({ value, next: this._front });
+    this._top = new StackNode({ value, next: this._top });
 
     return this;
   }
@@ -33,7 +33,7 @@ export class NodeStack<T> extends Stack<T> {
       extendable: this.extendable,
     });
     const values: T[] = new Array<T>(this.size);
-    let currentElement = this._front;
+    let currentElement = this._top;
 
     for (let i = this.size - 1; i >= 0; i--) {
       values[i] = currentElement!.value!;
