@@ -16,7 +16,6 @@ export class ArrayStack<T> extends Stack<T> {
     const value = this._storage[this._front];
     this._storage[this._front] = null;
 
-    --this.size;
     --this._front;
 
     return value!;
@@ -24,7 +23,6 @@ export class ArrayStack<T> extends Stack<T> {
 
   protected handlePush(value: T): this {
     this._storage[++this._front] = value;
-    ++this.size;
 
     return this;
   }

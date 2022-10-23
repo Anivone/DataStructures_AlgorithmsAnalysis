@@ -42,6 +42,7 @@ export abstract class Stack<T> {
         `Impossible to execute 'push(${value})'. Stack has reached maximum capacity!`
       );
     if (this._extendable && this.isFull()) this.extend();
+    ++this.size;
 
     return this.handlePush(value);
   }
@@ -49,6 +50,7 @@ export abstract class Stack<T> {
   public pop(): T {
     if (this.isEmpty())
       throw new Error("Impossible to execute 'pop()'. Stack is empty!");
+    --this.size;
 
     return this.handlePop();
   }

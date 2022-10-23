@@ -13,14 +13,12 @@ export class NodeStack<T> extends Stack<T> {
   protected handlePop(): T {
     const value = this._front!.value;
     this._front = this._front!.next;
-    --this.size;
 
     return value;
   }
 
   protected handlePush(value: T): this {
     this._front = new StackNode({ value, next: this._front });
-    ++this.size;
 
     return this;
   }
