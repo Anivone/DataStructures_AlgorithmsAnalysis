@@ -13,11 +13,11 @@ const readlineInterface = readline.createInterface({
 
 readlineInterface.question("Input the sequence of numbers: ", (sequence) => {
   fillStackFromString(sequence, arrayStack);
-  console.log("ArrayStack is ", arrayStack.toString());
+  console.log("ArrayStack is", arrayStack.toString());
   console.log("ArrayStack's average is", getAverage(arrayStack));
 
   fillStackFromString(sequence, nodeStack);
-  console.log("NodeStack is ", nodeStack.toString());
+  console.log("NodeStack is", nodeStack.toString());
   console.log("NodeStack's average is", getAverage(nodeStack));
 
   readlineInterface.close();
