@@ -15,10 +15,12 @@ readlineInterface.question("Input the sequence of numbers: ", (sequence) => {
   fillStackFromString(sequence, arrayStack);
   console.log("ArrayStack is", arrayStack.toString());
   console.log("ArrayStack's average is", getAverage(arrayStack));
+  console.log("ArrayStack after getAverage() is", arrayStack.toString());
 
   fillStackFromString(sequence, nodeStack);
   console.log("NodeStack is", nodeStack.toString());
   console.log("NodeStack's average is", getAverage(nodeStack));
+  console.log("NodeStack after getAverage() is", nodeStack.toString());
 
   readlineInterface.close();
 });

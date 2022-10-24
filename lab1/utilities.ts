@@ -38,11 +38,12 @@ export const fillStackFromString = (
 };
 
 export const getAverage = (inputStack: Stack<number>) => {
+  const stack = inputStack.copy();
   let sum = 0;
-  const count = inputStack.size;
+  const count = stack.size;
 
-  while (!inputStack.isEmpty()) {
-    sum += inputStack.pop();
+  while (!stack.isEmpty()) {
+    sum += stack.pop();
   }
 
   return sum / count;
