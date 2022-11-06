@@ -1,0 +1,6 @@
+3 2
+England London
+France Paris
+Germany Berlin
+France
+England

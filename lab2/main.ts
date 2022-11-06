@@ -50,4 +50,6 @@ readlineInterface.on("close", () => {
     .forEach((value) => {
       console.log(value);
     });
+  console.log('Table is');
+  console.log(hashTable.toString());
 });
